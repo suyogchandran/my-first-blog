@@ -6,19 +6,13 @@
 <div>
     <h1><a href="/">Django girls blog</a></h1>
 </div>
-<div>
-    <p>Published : 02 Apr 2019</p>
-    <h3><a href="https://en.wikipedia.org/wiki/Virat_Kohli">Virat Kohli</a></h3>
-    <p>Virat Kohli is an Indian international cricketer who currently captains the India national team. A right-handed
-        top-order batsman, Kohli is regarded as one of the best batsmen in the world. He plays for Royal Challengers
-        Bangalore in the Indian Premier League, and has been the team's captain since 2013</p>
-</div>
-<div>
-    <p>Published : 01 Apr 2019</p>
-    <h3><a href="https://en.wikipedia.org/wiki/Sachin_Tendulkar">Sachin Tendulkar</a></h3>
-    <p>Sachin Ramesh Tendulkar is a former Indian international cricketer and a former captain of the Indian national
-        team, regarded as one of the greatest batsmen of all time. He is the highest run scorer of all time in
-        International cricket</p>
-</div>
+{% for post in posts %}
+    <div>
+        <p>Published :{{ post.published_date }}</p>
+        <h3><a href="">{{ post.title }}</a></h3>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+
+{% endfor %}
 </body>
 </html>
